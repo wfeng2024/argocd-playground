@@ -1,1 +1,3 @@
-global.redis.password = 'abcd1234'
+global:
+  redis:
+    password: 'abcd1234'

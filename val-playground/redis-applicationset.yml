@@ -1,6 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
+metadata:
+  name: 'redis-test'
+  namespace: argocd
 spec:
+  project: default
+  destination:
+    name: 'in-cluster'
+    namespace: 'argo-playground'
   sources:
   - repoURL: 'https://charts.bitnami.com/bitnami'
     chart: redis
