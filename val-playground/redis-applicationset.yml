@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+spec:
+  sources:
+  - repoURL: 'https://charts.bitnami.com/bitnami'
+    chart: redis
+    targetRevision: 19.6.4
+    helm:
+      valueFiles:
+      - $values/val-playground/values-staging.yml
+  - repoURL: 'https://github.com/wfeng2024/argocd-playground.git'
+    targetRevision: main
+    ref: values
